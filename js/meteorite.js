@@ -13,7 +13,7 @@ class Meteorite {
     this.isActive = true; // Estado del meteorito
 
     this.image = new Image();
-    this.image.src = '../assets/img/meterorito_espiritu3.png';
+    this.image.src = 'assets/img/meterorito_espiritu3.png';
     this.imageLoaded = false;
 
     this.image.onload = () => {

@@ -14,7 +14,7 @@ class Player {
     this.image = new Image(); // Imagen de la nave
     this.image.frames = 1; // Solo una imagen para la nave
     this.image.frameIndex = 0; // Índice del marco de la imagen
-    this.image.src = '../assets/img/Nave_espacial_1_medium.png'; // Cambia a la ruta de tu imagen
+    this.image.src = 'assets/img/Nave_espacial_1_medium.png'; // Cambia a la ruta de tu imagen
 
     this.tick = 0; // Contador para la animación
     this.bullets = []; // Array para las balas

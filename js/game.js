@@ -19,10 +19,10 @@ class Game {
     this.fps = 60; // Fotogramas por segundo
     this.started = false;
     this.currentLevel = 0;
-    this.startAudio = new Audio('/assets/audio/game-music-loop-3-144252.mp3'); // Ruta al sonido de inicio
-    this.startAudio.volume = 0.1;
-    this.gameOverAudio = new Audio('/assets/audio/game-over-arcade-6435.mp3'); // Ruta al sonido de fin de juego
-    this.gameOverAudio.volume = 0.1;
+    this.startAudio = new Audio('assets/audio/game-music-loop-3-144252.mp3'); // Ruta al sonido de inicio
+    this.startAudio.volume = 1;
+    this.gameOverAudio = new Audio('assets/audio/game-over-arcade-6435.mp3'); // Ruta al sonido de fin de juego
+    this.gameOverAudio.volume = 1;
 
     this.isGameOver = false;
     this.drawWelcome();

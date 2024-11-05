@@ -12,7 +12,7 @@ class Enemy {
     this.direction = 1; // Dirección de movimiento (1 = derecha, -1 = izquierda)
 
     this.img = new Image();
-    this.img.src = '../assets/img/nave_espacial_enemigo_1_medium.png'; // Ruta a la imagen del enemigo
+    this.img.src = 'assets/img/nave_espacial_enemigo_1_medium.png'; // Ruta a la imagen del enemigo
 
     this.bullets = []; // Arreglo para las balas del enemigo
     this.fireRate = fireRate; // Frecuencia de disparo en milisegundos
