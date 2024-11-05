@@ -1,0 +1,71 @@
+#controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  display: flex;
+  gap: 30px;
+}
+
+button {
+  background-color: rgba(121, 119, 231, 0.8);
+  margin: 0 15px;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 30px 50px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transfor 0, 2s;
+}
+
+button:hover {
+  background-color: rgb(137, 69, 138);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#control {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  margin-top: 20px; /* Espacio entre el canvas y los botones */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background-image: url('../assets/img/3002090.jpg'); /* Coloca la ruta de tu imagen de fondo aquí */
+  background-size: cover; /* La imagen cubrirá todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* No repetirá la imagen */
+}
+
+#game-background {
+  position: relative; /* Para el posicionamiento del canvas */
+  width: 820px; /* Ancho total del contenedor (canvas + padding) */
+  height: 620px; /* Alto total del contenedor (canvas + padding) */
+  border: 10px solid #fff; /* Borde alrededor del contenedor */
+  padding: 10px; /* Espacio entre el borde y el canvas */
+  background-color: rgba(
+    46,
+    46,
+    46,
+    0.8
+  ); /* Fondo del contenedor con un poco de opacidad */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra alrededor del contenedor */
+  border-radius: 10px; /* Bordes redondeados para un efecto más atractivo */
+}
+
+canvas {
+  background-color: black;
+  display: block;
+  margin: 0 auto;
+}
+img {
+  visibility: hidden;
+}
