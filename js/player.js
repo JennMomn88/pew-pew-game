@@ -106,7 +106,7 @@ class Player {
   }
 
   hit(totalHits) {
-    this.pointLive.reduceHealth(totalHits);
+    this.pointLive.reduceHealth(totalHits); //quita vida
   }
 
   addScore(points) {

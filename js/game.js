@@ -51,7 +51,7 @@ class Game {
 
       this.checkCollisions(); // Verifica colisiones
 
-      enemyTick++;
+      enemyTick++; //
       meteoriteTick++;
 
       if (this.currentLevel < this.pointLive.currentLevel) this.setLevel();
@@ -81,9 +81,11 @@ class Game {
   }
 
   checkCollisions() {
-    this.enemies.forEach((enemy) => enemy.checkCollisions(this.player));
-    this.meteorites.forEach((meteorite) =>
-      meteorite.checkCollision(this.player)
+    this.enemies.forEach((enemy) => enemy.checkCollisions(this.player)); //Comprobamos si los enemigos o las balas chocan con el player.
+    this.meteorites.forEach(
+      (
+        meteorite //si el meteorito choca con el player.
+      ) => meteorite.checkCollision(this.player)
     );
     this.player.checkCollisions(this.enemies);
   }
@@ -139,6 +141,7 @@ class Game {
   }
 
   setLevel() {
+    //comprueba la dificultad del juego y actualiza el nivel.
     ++this.currentLevel;
 
     if (this.currentLevel > 10) return;
