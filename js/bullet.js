@@ -32,4 +32,24 @@ class Bullet {
       this.y = -this.size; // Saca la bala completamente del canvas
     }
   }
+
+  checkCollision(element) {
+    const colX = this.x < element.x + element.w && this.x + this.w > element.x;
+    const colY = this.y < element.y + element.h && this.y + this.h > element.y;
+    return colX && colY;
+  }
+
+  checkCollisions(enemies) {
+    return enemies.reduce((accumulator, enemy) => {
+      if (this.checkCollision(enemy)) {
+        enemy.hit();
+        return ++accumulator;
+      }
+      return accumulator;
+    }, 0);
+  }
+
+  hit() {
+    this.isActive = false;
+  }
 }
