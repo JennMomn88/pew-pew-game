@@ -3,7 +3,7 @@ class Player {
     this.ctx = ctx; // Contexto del canvas
 
     this.w = 40; // Ancho de la nave
-    this.h = 20; // Altura de la nave
+    this.h = 25; // Altura de la nave
 
     this.x = (ctx.canvas.width - this.w) / 2; // Posición inicial centrada
     this.y = ctx.canvas.height - this.h - 20; // Posición en la parte inferior del canvas
