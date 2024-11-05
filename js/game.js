@@ -19,15 +19,25 @@ class Game {
     this.fps = 60; // Fotogramas por segundo
     this.started = false;
     this.currentLevel = 0;
+    this.startAudio = new Audio('/assets/audio/game-music-loop-3-144252.mp3'); // Ruta al sonido de inicio
+    this.startAudio.volume = 0.1;
+    this.gameOverAudio = new Audio('/assets/audio/game-over-arcade-6435.mp3'); // Ruta al sonido de fin de juego
+    this.gameOverAudio.volume = 0.1;
 
-    this.audio = new Audio('/assets/audio/mw-theme.mp3');
-    this.audio.volume = 0.05;
     this.isGameOver = false;
     this.drawWelcome();
   }
 
   start() {
-    //this.audio.play(); // Inicia el audio de fondo
+    // Pausa el audio de game over si estaba sonando
+    this.gameOverAudio.pause();
+    this.gameOverAudio.currentTime = 0;
+
+    // Reproduce el audio de inicio
+    if (this.startAudio.paused) {
+      this.startAudio.play();
+    }
+
     this.started = true;
     let enemyTick = 0;
     let meteoriteTick = 0;
@@ -82,10 +92,12 @@ class Game {
     this.clear();
     this.drawGameOver();
     this.isGameOver = true;
-    // const audio = new Audio('/assets/audio/gameover.mp3');
-    // audio.volume = 0.05;
-    //audio.play();
-    // this.pause(); // Llama a pause cuando se acaba el juego
+    // Pausa el audio de inicio y reinicia su tiempo a cero
+    this.startAudio.pause();
+    this.startAudio.currentTime = 0;
+
+    // Reproduce el audio de game over
+    this.gameOverAudio.play();
   }
 
   addEnemy() {
@@ -96,9 +108,11 @@ class Game {
   }
 
   pause() {
-    //this.audio.pause();
-    this.started = false;
-    clearInterval(this.interval); // Detiene el intervalo
+    if (this.started) {
+      this.started = false;
+      clearInterval(this.interval); // Detiene el intervalo
+      this.startAudio.pause();
+    }
   }
 
   draw() {
